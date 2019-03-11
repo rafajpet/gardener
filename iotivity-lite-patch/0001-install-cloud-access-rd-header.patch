@@ -125,3 +125,218 @@ index 203f384..0000000
 -Libs.private: -lm -pthread
 -Cflags: -I${includedir}/iotivity-constrained @extra_cflags@
 -Libs: -L${libdir} -liotivity-constrained-rd-client
+From 170a75fffeb09f101f3d299f2d5bb3315704a262 Mon Sep 17 00:00:00 2001
+From: Peter Rafaj <peter.rafaj@kistler.com>
+Date: Mon, 11 Mar 2019 16:17:41 +0100
+Subject: [PATCH] include cloud access header when CLOUD=1
+
+---
+ port/linux/Makefile                                         | 13 +++++++++----
+ ...daccess.pc.in => iotivity-constrained-cloudaccess.pc.in} |  0
+ ...rd-client.pc.in => iotivity-constrained-rd-client.pc.in} |  0
+ .../{libst-app-framework.pc.in => st-app-framework.pc.in}   |  0
+ 4 files changed, 9 insertions(+), 4 deletions(-)
+ rename port/linux/{libiotivity-constrained-cloudaccess.pc.in => iotivity-constrained-cloudaccess.pc.in} (100%)
+ rename port/linux/{libiotivity-constrained-rd-client.pc.in => iotivity-constrained-rd-client.pc.in} (100%)
+ rename port/linux/{libst-app-framework.pc.in => st-app-framework.pc.in} (100%)
+
+diff --git a/port/linux/Makefile b/port/linux/Makefile
+index 17c1f97..216c0d2 100644
+--- a/port/linux/Makefile
++++ b/port/linux/Makefile
+@@ -92,6 +92,11 @@ SRC_RD_CLIENT=$(wildcard ../../service/resource-directory/client/src/*.c)
+ HEADERS = $(wildcard ../../include/*.h)
+ HEADERS += ../../port/linux/oc_config.h
+ 
++ifeq ($(CLOUD),1)	  	
++	HEADERS += $(wildcard ../../service/cloud-access/include/*.h)
++	HEADERS += $(wildcard ../../service/resource-directory/client/include/*.h)
++endif
++
+ HEADERS_COAP = $(wildcard ../../messaging/coap/*.h)
+ HEADERS_UTIL = $(wildcard ../../util/*.h)
+ HEADERS_UTIL_PT = $(wildcard ../../util/pt/*.h)
+@@ -208,7 +213,7 @@ ifeq ($(CLOUD),1)
+ 	CONSTRAINED_LIBS += libiotivity-constrained-cloudaccess.a libiotivity-constrained-cloudaccess.so \
+ 			libiotivity-constrained-rd-client.a libiotivity-constrained-rd-client.so
+ 	UNIT_TESTS += cloudaccesstest rdclienttest
+-	PC += libiotivity-constrained-rd-client.pc libiotivity-constrained-cloudaccess.pc
++	PC += iotivity-constrained-rd-client.pc iotivity-constrained-cloudaccess.pc
+ 	SAMPLES += cloud_linux
+ endif
+ 
+@@ -439,7 +444,7 @@ iotivity-constrained-client-server.pc: iotivity-constrained-client-server.pc.in
+ 		-e 's,@version@,$(VERSION),' \
+ 		-e 's,@extra_cflags@,$(EXTRA_CFLAGS),'
+ 
+-libiotivity-constrained-rd-client.pc: libiotivity-constrained-rd-client.pc.in
++iotivity-constrained-rd-client.pc: iotivity-constrained-rd-client.pc.in
+ 	$(SED) > $@ < $< \
+ 		-e 's,@prefix@,$(prefix),' \
+ 		-e 's,@exec_prefix@,$(exec_prefix),' \
+@@ -448,7 +453,7 @@ libiotivity-constrained-rd-client.pc: libiotivity-constrained-rd-client.pc.in
+ 		-e 's,@version@,$(VERSION),' \
+ 		-e 's,@extra_cflags@,$(EXTRA_CFLAGS),'
+ 
+-libiotivity-constrained-cloudaccess.pc: libiotivity-constrained-cloudaccess.pc.in
++iotivity-constrained-cloudaccess.pc: iotivity-constrained-cloudaccess.pc.in
+ 	$(SED) > $@ < $< \
+ 		-e 's,@prefix@,$(prefix),' \
+ 		-e 's,@exec_prefix@,$(exec_prefix),' \
+@@ -457,7 +462,7 @@ libiotivity-constrained-cloudaccess.pc: libiotivity-constrained-cloudaccess.pc.i
+ 		-e 's,@version@,$(VERSION),' \
+ 		-e 's,@extra_cflags@,$(EXTRA_CFLAGS),'
+ 
+-libst-app-framework.pc: libst-app-framework.pc.in
++st-app-framework.pc: st-app-framework.pc.in
+ 	$(SED) > $@ < $< \
+ 		-e 's,@prefix@,$(prefix),' \
+ 		-e 's,@exec_prefix@,$(exec_prefix),' \
+diff --git a/port/linux/libiotivity-constrained-cloudaccess.pc.in b/port/linux/iotivity-constrained-cloudaccess.pc.in
+similarity index 100%
+rename from port/linux/libiotivity-constrained-cloudaccess.pc.in
+rename to port/linux/iotivity-constrained-cloudaccess.pc.in
+diff --git a/port/linux/libiotivity-constrained-rd-client.pc.in b/port/linux/iotivity-constrained-rd-client.pc.in
+similarity index 100%
+rename from port/linux/libiotivity-constrained-rd-client.pc.in
+rename to port/linux/iotivity-constrained-rd-client.pc.in
+diff --git a/port/linux/libst-app-framework.pc.in b/port/linux/st-app-framework.pc.in
+similarity index 100%
+rename from port/linux/libst-app-framework.pc.in
+rename to port/linux/st-app-framework.pc.in
+-- 
+2.11.0
+
+From 10a012a28c31e9d74a23ac21d5534c77b55dd891 Mon Sep 17 00:00:00 2001
+From: Peter Rafaj <peter.rafaj@kistler.com>
+Date: Mon, 11 Mar 2019 17:07:12 +0100
+Subject: [PATCH] resolving
+
+---
+ port/linux/Makefile                                | 11 +++++++---
+ port/linux/iotivity-constrained-cloudaccess.pc     | 25 ++++++++++++++++++++++
+ ...c.in => iotivity-constrained-cloudaccess.pc.in} |  0
+ port/linux/iotivity-constrained-rd-client.pc       | 25 ++++++++++++++++++++++
+ ....pc.in => iotivity-constrained-rd-client.pc.in} |  0
+ 5 files changed, 58 insertions(+), 3 deletions(-)
+ create mode 100644 port/linux/iotivity-constrained-cloudaccess.pc
+ rename port/linux/{libiotivity-constrained-cloudaccess.pc.in => iotivity-constrained-cloudaccess.pc.in} (100%)
+ create mode 100644 port/linux/iotivity-constrained-rd-client.pc
+ rename port/linux/{libiotivity-constrained-rd-client.pc.in => iotivity-constrained-rd-client.pc.in} (100%)
+
+diff --git a/port/linux/Makefile b/port/linux/Makefile
+index 17c1f97..4cb5fab 100644
+--- a/port/linux/Makefile
++++ b/port/linux/Makefile
+@@ -98,6 +98,11 @@ HEADERS_UTIL_PT = $(wildcard ../../util/pt/*.h)
+ HEADERS_PORT = $(wildcard ../../port/*.h)
+ HEADERS_TINYCBOR = $(wildcard ../../deps/tinycbor/src/*.h)
+ 
++ifeq ($(CLOUD),1)
++	HEADERS += $(wildcard ../../service/cloud-access/include/*.h)
++	HEADERS += $(wildcard ../../service/resource-directory/client/include/*.h)
++endif
++
+ CFLAGS_CA=-I../../service/cloud-access/include
+ CFLAGS_RD_CLIENT=-I../../service/resource-directory/client/include
+ CFLAGS=-fPIC -fno-asynchronous-unwind-tables -fno-omit-frame-pointer -ffreestanding -Os -fno-stack-protector -ffunction-sections -fdata-sections -fno-reorder-functions -fno-defer-pop -fno-strict-overflow -I./ -I../../include/ -I../../ -std=gnu99 -Wall -Wextra -Werror -pedantic #-Wl,-Map,client.map
+@@ -208,7 +213,7 @@ ifeq ($(CLOUD),1)
+ 	CONSTRAINED_LIBS += libiotivity-constrained-cloudaccess.a libiotivity-constrained-cloudaccess.so \
+ 			libiotivity-constrained-rd-client.a libiotivity-constrained-rd-client.so
+ 	UNIT_TESTS += cloudaccesstest rdclienttest
+-	PC += libiotivity-constrained-rd-client.pc libiotivity-constrained-cloudaccess.pc
++	PC += iotivity-constrained-rd-client.pc iotivity-constrained-cloudaccess.pc
+ 	SAMPLES += cloud_linux
+ endif
+ 
+@@ -439,7 +444,7 @@ iotivity-constrained-client-server.pc: iotivity-constrained-client-server.pc.in
+ 		-e 's,@version@,$(VERSION),' \
+ 		-e 's,@extra_cflags@,$(EXTRA_CFLAGS),'
+ 
+-libiotivity-constrained-rd-client.pc: libiotivity-constrained-rd-client.pc.in
++iotivity-constrained-rd-client.pc: iotivity-constrained-rd-client.pc.in
+ 	$(SED) > $@ < $< \
+ 		-e 's,@prefix@,$(prefix),' \
+ 		-e 's,@exec_prefix@,$(exec_prefix),' \
+@@ -448,7 +453,7 @@ libiotivity-constrained-rd-client.pc: libiotivity-constrained-rd-client.pc.in
+ 		-e 's,@version@,$(VERSION),' \
+ 		-e 's,@extra_cflags@,$(EXTRA_CFLAGS),'
+ 
+-libiotivity-constrained-cloudaccess.pc: libiotivity-constrained-cloudaccess.pc.in
++iotivity-constrained-cloudaccess.pc: iotivity-constrained-cloudaccess.pc.in
+ 	$(SED) > $@ < $< \
+ 		-e 's,@prefix@,$(prefix),' \
+ 		-e 's,@exec_prefix@,$(exec_prefix),' \
+diff --git a/port/linux/iotivity-constrained-cloudaccess.pc b/port/linux/iotivity-constrained-cloudaccess.pc
+new file mode 100644
+index 0000000..f28a0dc
+--- /dev/null
++++ b/port/linux/iotivity-constrained-cloudaccess.pc
+@@ -0,0 +1,25 @@
++# Copyright (c) 2019 Kistler
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#      http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++prefix=/usr/local
++exec_prefix=/usr/local
++libdir=/usr/local/lib
++includedir=/usr/local/include
++
++Name: libiotivity-constrained-cloudaccess
++Description: Iotivity constrained resource directory client library
++Version: 1.0
++Libs.private: -lm -pthread
++Cflags: -I${includedir}/iotivity-constrained  -DOC_PKI -DOC_DYNAMIC_ALLOCATION -DOC_SECURITY -DOC_IPV4 -DOC_TCP
++Libs: -L${libdir} -liotivity-constrained-cloudaccess
+diff --git a/port/linux/libiotivity-constrained-cloudaccess.pc.in b/port/linux/iotivity-constrained-cloudaccess.pc.in
+similarity index 100%
+rename from port/linux/libiotivity-constrained-cloudaccess.pc.in
+rename to port/linux/iotivity-constrained-cloudaccess.pc.in
+diff --git a/port/linux/iotivity-constrained-rd-client.pc b/port/linux/iotivity-constrained-rd-client.pc
+new file mode 100644
+index 0000000..a21b575
+--- /dev/null
++++ b/port/linux/iotivity-constrained-rd-client.pc
+@@ -0,0 +1,25 @@
++# Copyright (c) 2019 Kistler
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#      http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++prefix=/usr/local
++exec_prefix=/usr/local
++libdir=/usr/local/lib
++includedir=/usr/local/include
++
++Name: libiotivity-constrained-rd-client
++Description: Iotivity constrained resource directory client library
++Version: 1.0
++Libs.private: -lm -pthread
++Cflags: -I${includedir}/iotivity-constrained  -DOC_PKI -DOC_DYNAMIC_ALLOCATION -DOC_SECURITY -DOC_IPV4 -DOC_TCP
++Libs: -L${libdir} -liotivity-constrained-rd-client
+diff --git a/port/linux/libiotivity-constrained-rd-client.pc.in b/port/linux/iotivity-constrained-rd-client.pc.in
+similarity index 100%
+rename from port/linux/libiotivity-constrained-rd-client.pc.in
+rename to port/linux/iotivity-constrained-rd-client.pc.in
+-- 
+2.11.0
+
