@@ -1,0 +1,127 @@
+diff --git a/.gitignore b/.gitignore
+index b8ba4e2..ebae5e4 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1,3 +1,4 @@
++deps/mbedtls
+ port/linux/client
+ port/linux/server
+ port/linux/temp_sensor
+@@ -83,4 +84,4 @@ service/cloud-access/unittest/obj
+ service/resource-directory/client/unittest/obj
+ 
+ #vscode setting files
+-.vscode
+\ No newline at end of file
++.vscode
+diff --git a/deps/mbedtls b/deps/mbedtls
+--- a/deps/mbedtls
++++ b/deps/mbedtls
+@@ -1 +1 @@
+-Subproject commit 32605dc83042d737e715a685e53176388d73540e
++Subproject commit 32605dc83042d737e715a685e53176388d73540e-dirty
+diff --git a/port/linux/Makefile b/port/linux/Makefile
+index 17c1f97..32a9c84 100644
+--- a/port/linux/Makefile
++++ b/port/linux/Makefile
+@@ -92,6 +92,11 @@ SRC_RD_CLIENT=$(wildcard ../../service/resource-directory/client/src/*.c)
+ HEADERS = $(wildcard ../../include/*.h)
+ HEADERS += ../../port/linux/oc_config.h
+ 
++ifeq ($(CLOUD),1)
++	HEADERS += $(wildcard ../../service/cloud-access/include/*.h)
++	HEADERS += $(wildcard ../../service/resource-directory/client/include/*.h)	  	
++endif
++
+ HEADERS_COAP = $(wildcard ../../messaging/coap/*.h)
+ HEADERS_UTIL = $(wildcard ../../util/*.h)
+ HEADERS_UTIL_PT = $(wildcard ../../util/pt/*.h)
+@@ -208,7 +213,7 @@ ifeq ($(CLOUD),1)
+ 	CONSTRAINED_LIBS += libiotivity-constrained-cloudaccess.a libiotivity-constrained-cloudaccess.so \
+ 			libiotivity-constrained-rd-client.a libiotivity-constrained-rd-client.so
+ 	UNIT_TESTS += cloudaccesstest rdclienttest
+-	PC += libiotivity-constrained-rd-client.pc libiotivity-constrained-cloudaccess.pc
++	PC += iotivity-constrained-rd-client.pc iotivity-constrained-cloudaccess.pc
+ 	SAMPLES += cloud_linux
+ endif
+ 
+@@ -439,7 +444,7 @@ iotivity-constrained-client-server.pc: iotivity-constrained-client-server.pc.in
+ 		-e 's,@version@,$(VERSION),' \
+ 		-e 's,@extra_cflags@,$(EXTRA_CFLAGS),'
+ 
+-libiotivity-constrained-rd-client.pc: libiotivity-constrained-rd-client.pc.in
++iotivity-constrained-rd-client.pc: iotivity-constrained-rd-client.pc.in
+ 	$(SED) > $@ < $< \
+ 		-e 's,@prefix@,$(prefix),' \
+ 		-e 's,@exec_prefix@,$(exec_prefix),' \
+@@ -448,7 +453,7 @@ libiotivity-constrained-rd-client.pc: libiotivity-constrained-rd-client.pc.in
+ 		-e 's,@version@,$(VERSION),' \
+ 		-e 's,@extra_cflags@,$(EXTRA_CFLAGS),'
+ 
+-libiotivity-constrained-cloudaccess.pc: libiotivity-constrained-cloudaccess.pc.in
++iotivity-constrained-cloudaccess.pc: iotivity-constrained-cloudaccess.pc.in
+ 	$(SED) > $@ < $< \
+ 		-e 's,@prefix@,$(prefix),' \
+ 		-e 's,@exec_prefix@,$(exec_prefix),' \
+diff --git a/port/linux/libiotivity-constrained-cloudaccess.pc.in b/port/linux/libiotivity-constrained-cloudaccess.pc.in
+deleted file mode 100644
+index 68f7b5f..0000000
+--- a/port/linux/libiotivity-constrained-cloudaccess.pc.in
++++ /dev/null
+@@ -1,25 +0,0 @@
+-# Copyright (c) 2019 Kistler
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-prefix=@prefix@
+-exec_prefix=@exec_prefix@
+-libdir=@libdir@
+-includedir=@includedir@
+-
+-Name: libiotivity-constrained-cloudaccess
+-Description: Iotivity constrained resource directory client library
+-Version: @version@
+-Libs.private: -lm -pthread
+-Cflags: -I${includedir}/iotivity-constrained @extra_cflags@
+-Libs: -L${libdir} -liotivity-constrained-cloudaccess
+diff --git a/port/linux/libiotivity-constrained-rd-client.pc.in b/port/linux/libiotivity-constrained-rd-client.pc.in
+deleted file mode 100644
+index 203f384..0000000
+--- a/port/linux/libiotivity-constrained-rd-client.pc.in
++++ /dev/null
+@@ -1,25 +0,0 @@
+-# Copyright (c) 2019 Kistler
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#      http://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-prefix=@prefix@
+-exec_prefix=@exec_prefix@
+-libdir=@libdir@
+-includedir=@includedir@
+-
+-Name: libiotivity-constrained-rd-client
+-Description: Iotivity constrained resource directory client library
+-Version: @version@
+-Libs.private: -lm -pthread
+-Cflags: -I${includedir}/iotivity-constrained @extra_cflags@
+-Libs: -L${libdir} -liotivity-constrained-rd-client
