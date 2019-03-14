@@ -4,6 +4,7 @@ set(EXECUTABLE gardener)
 
 project(gardener VERSION 1.2.0 LANGUAGES C)
 set(CMAKE_C_STANDARD 99)
+set(CMAKE_BUILD_TYPE Debug)
 
 find_package(PkgConfig)
 
@@ -12,7 +13,7 @@ pkg_check_modules(iotivity-constrained-cloudaccess REQUIRED iotivity-constrained
 pkg_check_modules(iotivity-constrained-rd-client REQUIRED iotivity-constrained-rd-client)
 
 
-add_definitions(-DOC_CLIENT -DOC_SERVER)
+add_definitions(-DOC_CLIENT -DOC_SERVER -DOC_DEBUG)
 
 file(GLOB dev_src
         src/*.c
