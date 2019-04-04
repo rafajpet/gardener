@@ -2,5 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/iotivity-lite" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/iotivity-lite/deps/gtest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/iotivity-lite/deps/tinycbor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/paho.mqtt.c" vcs="Git" />
   </component>
 </project>

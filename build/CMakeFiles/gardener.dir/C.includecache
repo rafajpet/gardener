@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rafik/git/clinux/gardener/src/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+MQTTClient.h
+/home/rafik/git/clinux/gardener/src/MQTTClient.h
+
