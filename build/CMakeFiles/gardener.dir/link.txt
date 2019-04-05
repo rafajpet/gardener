@@ -1,1 +1,0 @@
-/usr/bin/cc  -DOC_DEBUG -g -O0 -g   CMakeFiles/gardener.dir/src/config.c.o CMakeFiles/gardener.dir/src/log.c.o CMakeFiles/gardener.dir/src/main.c.o  -o gardener -Wl,-rpath,/usr/local/lib -lpthread -liotivity-constrained-client-server -liotivity-constrained-cloudaccess -liotivity-constrained-rd-client /usr/local/lib/libpaho-mqtt3c.so 

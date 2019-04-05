@@ -1,3 +1,0 @@
-/home/rap/iotivity/gardener/build/CMakeFiles/rebuild_cache.dir
-/home/rap/iotivity/gardener/build/CMakeFiles/edit_cache.dir
-/home/rap/iotivity/gardener/build/CMakeFiles/gardener.dir
