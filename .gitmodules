@@ -1,6 +1,0 @@
-[submodule "deps/paho.mqtt.c"]
-	path = deps/paho.mqtt.c
-	url = git@github.com:eclipse/paho.mqtt.c.git
-[submodule "deps/iotivity-lite"]
-	path = deps/iotivity-lite
-	url = git@github.com:go-ocf/iotivity-lite.git
