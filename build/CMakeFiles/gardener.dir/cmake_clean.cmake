@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/gardener.dir/src/config.c.o"
+  "CMakeFiles/gardener.dir/src/log.c.o"
   "CMakeFiles/gardener.dir/src/main.c.o"
   "gardener.pdb"
   "gardener"

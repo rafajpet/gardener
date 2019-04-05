@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/rafik/git/clinux/gardener/src/main.c" "/home/rafik/git/clinux/gardener/build/CMakeFiles/gardener.dir/src/main.c.o"
+  "/home/rap/iotivity/gardener/src/config.c" "/home/rap/iotivity/gardener/build/CMakeFiles/gardener.dir/src/config.c.o"
+  "/home/rap/iotivity/gardener/src/log.c" "/home/rap/iotivity/gardener/build/CMakeFiles/gardener.dir/src/log.c.o"
+  "/home/rap/iotivity/gardener/src/main.c" "/home/rap/iotivity/gardener/build/CMakeFiles/gardener.dir/src/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
