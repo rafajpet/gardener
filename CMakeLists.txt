@@ -6,6 +6,7 @@ project(gardener VERSION 1.2.0 LANGUAGES C)
 set(CMAKE_C_STANDARD 99)
 
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DOC_DEBUG -g -O0")
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
 
 find_package(PkgConfig)
 

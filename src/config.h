@@ -13,8 +13,8 @@ struct Config {
     char *root_ca_cert_file;
 };
 
-bool load_config(const struct Config *config, const char *file);
+bool load_config(const struct Config* config, const char* file);
 
-bool free_config(const struct Config *config);
+bool free_config(const struct Config* config);
 
 #endif //GARDENER_CONFIG_H
