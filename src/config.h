@@ -7,14 +7,16 @@
 #include <stdbool.h>
 
 struct Config {
-    bool reload_enable;
     char *data_topic;
     char *config_topic;
     char *root_ca_cert_file;
 };
 
-bool load_config(const struct Config* config, const char* file);
+typedef struct Config Config;
 
-bool free_config(const struct Config* config);
+
+Config *load_config(const char *file);
+
+void free_config(void *config);
 
 #endif //GARDENER_CONFIG_H

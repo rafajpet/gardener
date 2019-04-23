@@ -5,6 +5,9 @@
 #include <unistd.h>
 #include <stdbool.h>
 #include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "subscriber.h"
 #include "log.h"
@@ -14,89 +17,127 @@
 #define ADDRESS     "tcp://localhost:1883"
 #define CLIENTID    "ExampleClientSub"
 #define TOPIC       "test"
+#define TOPIC2      "topic2"
 #define PAYLOAD     "Hello World!"
 #define QOS         1
 #define TIMEOUT     10000L
 
-pthread_mutex_t count_mutex     = PTHREAD_MUTEX_INITIALIZER;
-pthread_cond_t  condition_var   = PTHREAD_COND_INITIALIZER;
+typedef struct {
+    int x;
+    char *name;
+} MQTTSensorClient;
 
+int SensorClient_init(SensorClient *client, SensorClientConfig *config) {
 
-volatile MQTTClient_deliveryToken deliveredtoken;
-
-void delivered(void *context, MQTTClient_deliveryToken dt)
-{
-    printf("Message with token value %d delivery confirmed\n", dt);
-    deliveredtoken = dt;
+    log_debug("init");
+    MQTTSensorClient *c = malloc(sizeof(MQTTSensorClient));
+    c->x = 10;
+    *client = c;
+    MQTTSensorClient* test = *client;
+    return 0;
 }
 
-int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_message *message)
-{
-    int i;
-    char* payloadptr;
+int SensorClient_start(SensorClient* client) {
 
-    printf("Message arrived\n");
-    printf("     topic: %s\n", topicName);
-    printf("   message: ");
-
-    payloadptr = message->payload;
-    for(i=0; i<message->payloadlen; i++)
-    {
-        putchar(*payloadptr++);
-    }
-    putchar('\n');
-    MQTTClient_freeMessage(&message);
-    MQTTClient_free(topicName);
-    return 1;
+    MQTTSensorClient* sensorClient = *client;
+    log_debug("int: %d", sensorClient->x);
+    log_debug("start");
+    return 0;
 }
 
-void connlost(void *context, char *cause)
-{
-    printf("\nConnection lost\n");
-    printf("     cause: %s\n", cause);
+int SensorClient_stop(SensorClient *client) {
+
+    MQTTSensorClient* sensorClient = *client;
+    log_debug("stop");
+    return 0;
 }
 
+int SensorClient_free(SensorClient *client) {
 
-
-void *subscribe_function(void *param)
-{
-    MQTTClient client;
-    MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
-    int rc;
-    int ch;
-
-    MQTTClient_create(&client, ADDRESS, CLIENTID,
-                      MQTTCLIENT_PERSISTENCE_NONE, NULL);
-    conn_opts.keepAliveInterval = 20;
-    conn_opts.cleansession = 1;
-
-    MQTTClient_setCallbacks(client, NULL, connlost, msgarrvd, delivered);
-
-    if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
-    {
-        printf("Failed to connect, return code %d\n", rc);
-        return NULL;
-    }
-    printf("Subscribing to topic %s\nfor client %s using QoS%d\n\n"
-           "Press Q<Enter> to quit\n\n", TOPIC, CLIENTID, QOS);
-    MQTTClient_subscribe(client, TOPIC, QOS);
-
-
-    pthread_mutex_lock( &count_mutex );
-    pthread_cond_wait( &condition_var, &count_mutex );
-    pthread_mutex_unlock( &count_mutex );
-
-    log_debug("close mqtt subscribe to topic");
-    MQTTClient_unsubscribe(client, TOPIC);
-    MQTTClient_disconnect(client, 10000);
-    MQTTClient_destroy(&client);
-    return NULL;
+    log_debug("free");
+    MQTTSensorClient* sensorClient = *client;
+    free(sensorClient);
+    return 0;
 }
 
-void stop_subscribe(){
-    log_debug("stop subscribe");
-    pthread_mutex_lock(&count_mutex);
-    pthread_cond_signal(&condition_var);
-    pthread_mutex_unlock(&count_mutex);
-    log_debug("stop subscribe OK");
-}
+//pthread_mutex_t count_mutex     = PTHREAD_MUTEX_INITIALIZER;
+//pthread_cond_t  condition_var   = PTHREAD_COND_INITIALIZER;
+//
+//
+//volatile MQTTClient_deliveryToken deliveredtoken;
+//
+//void delivered(void *context, MQTTClient_deliveryToken dt)
+//{
+//    printf("Message with token value %d delivery confirmed\n", dt);
+//    deliveredtoken = dt;
+//}
+//
+//int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_message *message)
+//{
+//    int i;
+//    char* payloadptr;
+//
+//    printf("Message arrived\n");
+//    printf("     topic: %s\n", topicName);
+//    printf("   message: ");
+//
+//    payloadptr = message->payload;
+//    for(i=0; i<message->payloadlen; i++)
+//    {
+//        putchar(*payloadptr++);
+//    }
+//    putchar('\n');
+//    MQTTClient_freeMessage(&message);
+//    MQTTClient_free(topicName);
+//    return 1;
+//}
+//
+//void connlost(void *context, char *cause)
+//{
+//    printf("\nConnection lost\n");
+//    printf("     cause: %s\n", cause);
+//}
+//
+//
+//
+//void *subscribe_function(void *param)
+//{
+//    MQTTClient client;
+//    MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
+//    int rc;
+//    int ch;
+//
+//    MQTTClient_create(&client, ADDRESS, CLIENTID,
+//                      MQTTCLIENT_PERSISTENCE_NONE, NULL);
+//    conn_opts.keepAliveInterval = 20;
+//    conn_opts.cleansession = 1;
+//
+//    MQTTClient_setCallbacks(client, NULL, connlost, msgarrvd, delivered);
+//
+//    if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
+//    {
+//        printf("Failed to connect, return code %d\n", rc);
+//        return NULL;
+//    }
+//    printf("Subscribing to topic %s\nfor client %s using QoS%d\n\n"
+//           "Press Q<Enter> to quit\n\n", TOPIC, CLIENTID, QOS);
+//    MQTTClient_subscribe(client, TOPIC, QOS);
+//
+//    pthread_mutex_lock( &count_mutex );
+//    pthread_cond_wait( &condition_var, &count_mutex );
+//    pthread_mutex_unlock( &count_mutex );
+//
+//    log_debug("close mqtt subscribe to topic");
+//    MQTTClient_unsubscribe(client, TOPIC);
+//    MQTTClient_disconnect(client, 10000);
+//    MQTTClient_destroy(&client);
+//    return NULL;
+//}
+//
+//void stop_subscribe(){
+//    log_debug("stop subscribe");
+//    pthread_mutex_lock(&count_mutex);
+//    pthread_cond_signal(&condition_var);
+//    pthread_mutex_unlock(&count_mutex);
+//    log_debug("stop subscribe OK");
+//}

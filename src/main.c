@@ -15,10 +15,16 @@
 
 int main(void){
 
-    int ret = fopen("IDoNotExist.txt", "w");
-    perror("Opening IDoNotExist:");
-    //...
-    return 0;
+    SensorClient  client;
+    SensorClientConfig clientConfig;
+
+    SensorClient_init(&client, &clientConfig);
+    SensorClient_start(&client);
+    SensorClient_stop(&client);
+    SensorClient_free(&client);
+
+
+
 
 //    pthread_t mqtt_subscribe;
 //
@@ -27,16 +33,9 @@ int main(void){
 //        log_error("unable to create thread");
 //        exit(EXIT_FAILURE);
 //    }
-//
-//
-//    const struct Config config;
-//    const char* file = "hello";
-//    if(load_config(&config, file)){
-//        log_debug("Unable to load config file");
-//    } else {
-//        log_debug("Load config file");
-//    }
-//
+
+
+
 //    int ch;
 //    do
 //    {
