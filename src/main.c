@@ -44,6 +44,6 @@ int main(void){
 //    stop_subscribe();
 //    pthread_join(mqtt_subscribe, NULL);
 //    log_info("program exit");
-    return 0;
+    return EXIT_SUCCESS;
 }
 

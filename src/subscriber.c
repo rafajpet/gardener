@@ -48,6 +48,8 @@ int SensorClient_start(SensorClient* client) {
 int SensorClient_stop(SensorClient *client) {
 
     MQTTSensorClient* sensorClient = *client;
+    sensorClient->x = 300;
+    log_debug("int: %d", sensorClient->x);
     log_debug("stop");
     return 0;
 }
@@ -56,6 +58,7 @@ int SensorClient_free(SensorClient *client) {
 
     log_debug("free");
     MQTTSensorClient* sensorClient = *client;
+    log_debug("int: %d", sensorClient->x);
     free(sensorClient);
     return 0;
 }
