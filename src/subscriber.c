@@ -60,6 +60,7 @@ int SensorClient_free(SensorClient *client) {
     MQTTSensorClient* sensorClient = *client;
     log_debug("int: %d", sensorClient->x);
     free(sensorClient);
+    ///usr/bin/valgrind --tool=memcheck --xml=yes --xml-file=/tmp/valgrind --gen-suppressions=all --leak-check=full --leak-resolution=med --track-origins=yes /home/rap/iotivity/gardener/build/gardener
     return 0;
 }
 
