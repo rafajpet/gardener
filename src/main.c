@@ -15,16 +15,15 @@
 
 int main(void){
 
-    SensorClient  client;
-    SensorClientConfig clientConfig;
+    SensorManager_t  client;
+    SensorManagerConfig_t clientConfig;
 
     SensorClient_init(&client, &clientConfig);
     SensorClient_start(&client);
     SensorClient_stop(&client);
-    SensorClient_free(&client);
-
-
-
+    puts("Press any key to stop...");
+    getchar();
+    log_debug("This is end");
 
 //    pthread_t mqtt_subscribe;
 //
@@ -33,7 +32,7 @@ int main(void){
 //        log_error("unable to create thread");
 //        exit(EXIT_FAILURE);
 //    }
-
+    SensorClient_destroy(&client);
 
 
 //    int ch;

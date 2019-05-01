@@ -22,44 +22,102 @@
 #define QOS         1
 #define TIMEOUT     10000L
 
+
+void delivered(void *context, MQTTClient_deliveryToken dt)
+{
+    printf("Message with token value %d delivery confirmed\n", dt);
+}
+
+int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_message *message)
+{
+    int i;
+    char* payloadptr;
+
+    printf("Message arrived\n");
+    printf("     topic: %s\n", topicName);
+    printf("   message: ");
+
+    payloadptr = message->payload;
+    for(i=0; i<message->payloadlen; i++)
+    {
+        putchar(*payloadptr++);
+    }
+    putchar('\n');
+    MQTTClient_freeMessage(&message);
+    MQTTClient_free(topicName);
+    return 1;
+}
+
+void connlost(void *context, char *cause)
+{
+    printf("\nConnection lost\n");
+    printf("     cause: %s\n", cause);
+}
+
+
 typedef struct {
-    int x;
-    char *name;
-} MQTTSensorClient;
 
-int SensorClient_init(SensorClient *client, SensorClientConfig *config) {
+    MQTTClient *mqttClient;
+    MQTTClient_connectOptions connectOptions;
 
-    log_debug("init");
-    MQTTSensorClient *c = malloc(sizeof(MQTTSensorClient));
-    c->x = 10;
+} Manager_t;
+
+int SensorClient_init(SensorManager_t *client, SensorManagerConfig_t *config) {
+
+    log_debug("start init sensor manager");
+    Manager_t *c = malloc(sizeof(Manager_t));
+    //init MQTT client
+    log_debug("init mqtt client start");
+    MQTTClient *mqttClient = malloc(sizeof(MQTTClient));
+    MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
+    MQTTClient_create(mqttClient, ADDRESS, CLIENTID,
+                      MQTTCLIENT_PERSISTENCE_NONE, NULL);
+    conn_opts.keepAliveInterval = 20;
+    conn_opts.cleansession = 1;
+
+    MQTTClient_setCallbacks(*mqttClient, NULL, connlost, msgarrvd, delivered);
+    log_debug("finish init sensor manager");
+    c->mqttClient = mqttClient;
+    c->connectOptions = conn_opts;
     *client = c;
-    MQTTSensorClient* test = *client;
     return 0;
 }
 
-int SensorClient_start(SensorClient* client) {
+int SensorClient_start(SensorManager_t* client) {
 
-    MQTTSensorClient* sensorClient = *client;
-    log_debug("int: %d", sensorClient->x);
-    log_debug("start");
+    log_debug("start sensor manager");
+    Manager_t* sensorClient = *client;
+
+    int rc;
+    if ((rc = MQTTClient_connect(*(sensorClient->mqttClient), &sensorClient->connectOptions)) != MQTTCLIENT_SUCCESS)
+    {
+        log_error("Failed to connect, return code %d\n", rc);
+        return rc;
+    }
+    log_debug("subscribe to topic");
+    MQTTClient_subscribe(*(sensorClient->mqttClient), TOPIC, QOS);
+
+
     return 0;
 }
 
-int SensorClient_stop(SensorClient *client) {
+int SensorClient_stop(SensorManager_t *client) {
 
-    MQTTSensorClient* sensorClient = *client;
-    sensorClient->x = 300;
-    log_debug("int: %d", sensorClient->x);
     log_debug("stop");
+    Manager_t* sensorClient = *client;
+    MQTTClient_unsubscribe(*(sensorClient->mqttClient), TOPIC);
+    MQTTClient_disconnect(*(sensorClient->mqttClient),2000);
     return 0;
 }
 
-int SensorClient_free(SensorClient *client) {
+int SensorClient_destroy(SensorManager_t *client) {
 
     log_debug("free");
-    MQTTSensorClient* sensorClient = *client;
-    log_debug("int: %d", sensorClient->x);
+    Manager_t* sensorClient = *client;
+    MQTTClient_destroy(sensorClient->mqttClient);
+    free(sensorClient->mqttClient);
     free(sensorClient);
+    *client = NULL;
     ///usr/bin/valgrind --tool=memcheck --xml=yes --xml-file=/tmp/valgrind --gen-suppressions=all --leak-check=full --leak-resolution=med --track-origins=yes /home/rap/iotivity/gardener/build/gardener
     return 0;
 }
@@ -68,39 +126,6 @@ int SensorClient_free(SensorClient *client) {
 //pthread_cond_t  condition_var   = PTHREAD_COND_INITIALIZER;
 //
 //
-//volatile MQTTClient_deliveryToken deliveredtoken;
-//
-//void delivered(void *context, MQTTClient_deliveryToken dt)
-//{
-//    printf("Message with token value %d delivery confirmed\n", dt);
-//    deliveredtoken = dt;
-//}
-//
-//int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_message *message)
-//{
-//    int i;
-//    char* payloadptr;
-//
-//    printf("Message arrived\n");
-//    printf("     topic: %s\n", topicName);
-//    printf("   message: ");
-//
-//    payloadptr = message->payload;
-//    for(i=0; i<message->payloadlen; i++)
-//    {
-//        putchar(*payloadptr++);
-//    }
-//    putchar('\n');
-//    MQTTClient_freeMessage(&message);
-//    MQTTClient_free(topicName);
-//    return 1;
-//}
-//
-//void connlost(void *context, char *cause)
-//{
-//    printf("\nConnection lost\n");
-//    printf("     cause: %s\n", cause);
-//}
 //
 //
 //
