@@ -14,55 +14,30 @@
 
 #include "MQTTClient.h"
 
-#define ADDRESS     "tcp://localhost:1883"
-#define CLIENTID    "ExampleClientSub"
-#define TOPIC       "test"
-#define TOPIC2      "topic2"
-#define PAYLOAD     "Hello World!"
+#define CLIENTID    "sensor-manager-client"
 #define QOS         1
-#define TIMEOUT     10000L
-
-
-void delivered(void *context, MQTTClient_deliveryToken dt)
-{
-    printf("Message with token value %d delivery confirmed\n", dt);
-}
-
-int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_message *message)
-{
-    int i;
-    char* payloadptr;
-
-    printf("Message arrived\n");
-    printf("     topic: %s\n", topicName);
-    printf("   message: ");
-
-    payloadptr = message->payload;
-    for(i=0; i<message->payloadlen; i++)
-    {
-        putchar(*payloadptr++);
-    }
-    putchar('\n');
-    MQTTClient_freeMessage(&message);
-    MQTTClient_free(topicName);
-    return 1;
-}
-
-void connlost(void *context, char *cause)
-{
-    printf("\nConnection lost\n");
-    printf("     cause: %s\n", cause);
-}
-
+#define TIMEOUT     2000
 
 typedef struct {
 
+    SensorManagerConfig_t *config;
     MQTTClient *mqttClient;
     MQTTClient_connectOptions connectOptions;
 
 } Manager_t;
 
-int SensorClient_init(SensorManager_t *client, SensorManagerConfig_t *config) {
+
+void message_delivered(void *context, MQTTClient_deliveryToken dt)
+{
+    log_info("message with token  %d delivery confirmed\n", dt);
+}
+
+void connection_lost(void *context, char *cause)
+{
+    log_error("connection lost,cause: %s", cause);
+}
+
+int SensorManager_init(SensorManager_t *client, SensorManagerConfig_t *config) {
 
     log_debug("start init sensor manager");
     Manager_t *c = malloc(sizeof(Manager_t));
@@ -70,20 +45,29 @@ int SensorClient_init(SensorManager_t *client, SensorManagerConfig_t *config) {
     log_debug("init mqtt client start");
     MQTTClient *mqttClient = malloc(sizeof(MQTTClient));
     MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
-    MQTTClient_create(mqttClient, ADDRESS, CLIENTID,
+    MQTTClient_create(mqttClient, config->address, CLIENTID,
                       MQTTCLIENT_PERSISTENCE_NONE, NULL);
+    log_debug("Create mqtt client for connecting to: %s", config->address);
     conn_opts.keepAliveInterval = 20;
     conn_opts.cleansession = 1;
 
-    MQTTClient_setCallbacks(*mqttClient, NULL, connlost, msgarrvd, delivered);
     log_debug("finish init sensor manager");
+    c->config = config;
     c->mqttClient = mqttClient;
     c->connectOptions = conn_opts;
     *client = c;
     return 0;
 }
 
-int SensorClient_start(SensorManager_t* client) {
+int SensorManager_set_receive(SensorManager_t *client, receive_message_t *receiver) {
+    log_debug("set receive callback");
+
+    Manager_t* sensorClient = *client;
+    MQTTClient_setCallbacks(*(sensorClient->mqttClient), NULL, connection_lost , receiver, message_delivered);
+    return 0;
+}
+
+int SensorManager_start(SensorManager_t* client) {
 
     log_debug("start sensor manager");
     Manager_t* sensorClient = *client;
@@ -94,31 +78,32 @@ int SensorClient_start(SensorManager_t* client) {
         log_error("Failed to connect, return code %d\n", rc);
         return rc;
     }
-    log_debug("subscribe to topic");
-    MQTTClient_subscribe(*(sensorClient->mqttClient), TOPIC, QOS);
+    log_debug("subscribe to topic: %s", sensorClient->config->topic);
+    MQTTClient_subscribe(*(sensorClient->mqttClient), sensorClient->config->topic, QOS);
 
 
     return 0;
 }
 
-int SensorClient_stop(SensorManager_t *client) {
+int SensorManager_stop(SensorManager_t *client) {
 
-    log_debug("stop");
+    log_debug("stop sensor manager");
     Manager_t* sensorClient = *client;
-    MQTTClient_unsubscribe(*(sensorClient->mqttClient), TOPIC);
-    MQTTClient_disconnect(*(sensorClient->mqttClient),2000);
+    MQTTClient_unsubscribe(*(sensorClient->mqttClient), sensorClient->config->topic);
+    log_debug("unsubscribe from topic");
+    MQTTClient_disconnect(*(sensorClient->mqttClient),TIMEOUT);
+    log_debug("disconnect from mqtt broker");
     return 0;
 }
 
-int SensorClient_destroy(SensorManager_t *client) {
+int SensorManager_destroy(SensorManager_t *client) {
 
-    log_debug("free");
+    log_debug("free sensor manager");
     Manager_t* sensorClient = *client;
     MQTTClient_destroy(sensorClient->mqttClient);
     free(sensorClient->mqttClient);
     free(sensorClient);
     *client = NULL;
-    ///usr/bin/valgrind --tool=memcheck --xml=yes --xml-file=/tmp/valgrind --gen-suppressions=all --leak-check=full --leak-resolution=med --track-origins=yes /home/rap/iotivity/gardener/build/gardener
     return 0;
 }
 
