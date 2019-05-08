@@ -1,48 +1,38 @@
 //
-// Created by rap on 4/5/19.
+// Created by rafik on 8.5.2019.
 //
-#include <stdio.h>
-#include <stdlib.h>
+//system
 #include <string.h>
 
+//local
 #include "config.h"
 #include "log.h"
 
-#define MAX_TOPIC_LEN  50
-#define  MAX_CERT 10
+static void print_help(){
 
-#define CONFIG_TOPIC  "test"
-#define DATA_TOPIC    "data"
-
-
-Config *load_config(const char* file) {
-
-    Config *config = (Config*)malloc(sizeof(Config *));
-    if (config == NULL){
-        log_error("unable to create ");
-        return NULL;
-    }
-    log_debug("start loading configuration from: %s", file);
-    config->data_topic = malloc(MAX_TOPIC_LEN * sizeof(char *));
-    strcpy(config->data_topic, DATA_TOPIC);
-
-    config->config_topic = malloc(MAX_TOPIC_LEN * sizeof(char *));
-    strcpy(config->config_topic, CONFIG_TOPIC);
-
-    config->root_ca_cert_file = malloc(MAX_CERT * sizeof(char *));
-    strcpy(config->root_ca_cert_file, "haha cert");
-
-    log_debug("stop loading configuration from: %s", file);
-    return config;
 }
 
-void free_config(void *config){
-    log_debug("free config file start");
-    Config *c = (Config *)config;
-    free(c->root_ca_cert_file);
-    free(c->config_topic);
-    free(c->data_topic);
-    free(c);
-    log_debug("free config file end");
+int Config_default(Config_t *config) {
+    log_debug("Default config for application");
+    strcpy(config->mqtt_address, DEFAULT_MQTT_ADDRESS);
+    config->mqtt_port = DEFAULT_MQTT_PORT;
+    config->tls_enable = false;
+    strcpy(config->mqtt_cert_file, DEFAULT_MQTT_CERT_FILE);
+    strcpy(config->mqtt_cert_key_file, DEFAULT_MQTT_CERT_KEY_FILE);
+    strcpy(config->iotivity_endpoint, DEFAULT_IOTIVITY_ENDPOINT);
+    strcpy(config->iotivity_storage_path, DEFAULT_IOTIVITY_STORAGE_PATH);
+
+    return CONFIG_SUCCESS;
 }
 
+void Config_print(Config_t *config) {
+    log_debug("\n Configuration: \n MQTT_ADDRESS: %s \n MQTT_PORT: %d \n TLS_ENABLE: %d \n MQTT_CERT_FILE_PATH: %s \n "
+              "MQTT_CERT_KEY_FILE_PATH: %s \n IOTIVITY_ENDPOINT: %s \n IOTIVITY_PATH: %s \n"
+            ,config->mqtt_address, config->mqtt_port, config->tls_enable, config->mqtt_cert_file
+            ,config->mqtt_cert_key_file, config->iotivity_endpoint, config->iotivity_storage_path);
+}
+
+int Config_set_parameter(Config_t *config, int argc, char *argv[]) {
+
+    return CONFIG_SUCCESS;
+}

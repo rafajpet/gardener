@@ -30,7 +30,7 @@ include_directories(${iotivity-constrained-cloudaccess_INCLUDE_DIRS})
 include_directories(${iotivity-constrained-rd-client_INCLUDE_DIRS})
 
 
-add_executable(${EXECUTABLE} ${dev_src} src/log.c src/log.h)
+add_executable(${EXECUTABLE} ${dev_src})
 target_link_libraries(${EXECUTABLE}
         pthread
         ${iotivity-constrained-client-server_LIBRARIES}

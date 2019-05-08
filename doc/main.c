@@ -334,10 +334,9 @@ main(void)
     oc_string_to_endpoint(&address_str, &set_ep, NULL);
     oc_free_string(&address_str);
 
-    static const oc_handler_t handler = {.init = app_init,
-            .signal_event_loop = signal_event_loop,
-            .register_resources =
-            register_resources };
+    static const oc_handler_t handler = {init = app_init,
+            signal_event_loop = signal_event_loop,
+            register_resources = register_resources };
 
 #ifdef OC_SECURITY
     oc_storage_config("./cloud_linux_creds");
