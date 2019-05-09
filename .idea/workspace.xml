@@ -13,7 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0997232b-abb7-4162-a3fe-08e10d2f00bf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deps/iotivity-lite" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/certs.h" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/certs.h" afterDir="false" />
@@ -55,10 +54,10 @@
       <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509parse.data" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509parse.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509write.data" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509write.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509write.function" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509write.function" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/doc/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/subscriber.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/subscriber.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug-native/" />
@@ -75,25 +74,25 @@
     <session id="-30288676">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="49" />
+          <entry key="project.closed" value="53" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.5" value="7" />
+          <entry key="project.open.time.5" value="10" />
           <entry key="project.open.time.6" value="29" />
-          <entry key="project.open.time.7" value="12" />
+          <entry key="project.open.time.7" value="13" />
           <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="60" />
+          <entry key="project.opened" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="11" />
-          <entry key="c" value="5106" />
-          <entry key="h" value="2245" />
+          <entry key="c" value="7385" />
+          <entry key="h" value="2322" />
           <entry key="linux" value="1" />
           <entry key="txt" value="64" />
         </counts>
@@ -101,19 +100,19 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="64" />
-          <entry key="ObjectiveC" value="7351" />
+          <entry key="ObjectiveC" value="9707" />
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Build All (disassembly)" value="1" />
+          <entry key="Build All (disassembly)" value="4" />
           <entry key="Makefile" value="4" />
-          <entry key="c" value="38" />
+          <entry key="c" value="39" />
           <entry key="cbp" value="1" />
           <entry key="cmake" value="3" />
           <entry key="gardener (disassembly)" value="7" />
-          <entry key="h" value="49" />
+          <entry key="h" value="53" />
           <entry key="linux" value="2" />
           <entry key="patch" value="2" />
           <entry key="txt" value="6" />
@@ -122,8 +121,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CMakeLists.txt" value="8" />
-          <entry key="Disassembly" value="8" />
-          <entry key="ObjectiveC" value="87" />
+          <entry key="Disassembly" value="11" />
+          <entry key="ObjectiveC" value="92" />
           <entry key="PATCH" value="2" />
           <entry key="PLAIN_TEXT" value="8" />
         </counts>
@@ -132,11 +131,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+            <state relative-caret-position="184">
+              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding>
                 <element signature="e#220#238#0" expanded="true" />
               </folding>
@@ -144,32 +143,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file:///usr/include/getopt.h">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/stdlib.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="109" column="11" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="11" />
+            <state relative-caret-position="177">
+              <caret line="133" column="8" selection-start-line="133" selection-start-column="8" selection-end-line="133" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deps/paho.mqtt.c/src/MQTTClient.c">
+        <entry file="file://$PROJECT_DIR$/src/config.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7665">
-              <caret line="511" column="18" selection-start-line="511" selection-start-column="18" selection-end-line="511" selection-end-column="18" />
+            <state relative-caret-position="-117">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="22" />
+              <folding>
+                <element signature="e#93#118#0" expanded="true" />
+              </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deps/paho.mqtt.c/src/MQTTClientPersistence.h">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deps/paho.mqtt.c/src/MQTTClient.h">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -187,8 +179,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/subscriber.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="120">
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -196,11 +188,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/config.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="184">
+              <caret line="162" selection-start-line="162" selection-end-line="162" />
               <folding>
-                <element signature="e#77#96#0" expanded="true" />
+                <element signature="e#48#67#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/log.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1455">
+              <caret line="97" selection-start-line="97" selection-end-line="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/string.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2085">
+              <caret line="139" column="11" selection-start-line="139" selection-start-column="11" selection-end-line="139" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -253,6 +263,9 @@
       <find>oc_ri_add_resource</find>
       <find>flag</find>
       <find>display_usage</find>
+      <find>outFileName</find>
+      <find>optString</find>
+      <find>MAX_TOPIC_LENGTH</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -270,10 +283,10 @@
         <option value="$PROJECT_DIR$/src/log.c" />
         <option value="$PROJECT_DIR$/src/log.h" />
         <option value="$PROJECT_DIR$/deps/paho.mqtt.c/src/MQTTClient.c" />
-        <option value="$PROJECT_DIR$/src/subscriber.h" />
         <option value="$PROJECT_DIR$/src/subscriber.c" />
         <option value="$PROJECT_DIR$/doc/main.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/subscriber.h" />
         <option value="$PROJECT_DIR$/src/config.h" />
         <option value="$PROJECT_DIR$/src/config.c" />
         <option value="$PROJECT_DIR$/src/main.c" />
@@ -312,19 +325,6 @@
               <item name="gardener" type="b2602c69:ProjectViewProjectNode" />
               <item name="gardener" type="462c0819:PsiDirectoryNode" />
               <item name="deps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gardener" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gardener" type="462c0819:PsiDirectoryNode" />
-              <item name="deps" type="462c0819:PsiDirectoryNode" />
-              <item name="paho.mqtt.c" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gardener" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gardener" type="462c0819:PsiDirectoryNode" />
-              <item name="deps" type="462c0819:PsiDirectoryNode" />
-              <item name="paho.mqtt.c" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gardener" type="b2602c69:ProjectViewProjectNode" />
@@ -377,8 +377,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Build All">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug-bundled" RUN_TARGET_PROJECT_NAME="gardener" RUN_TARGET_NAME="gardener" EXPLICIT_BUILD_TARGET_NAME="all">
+  <component name="RunManager" selected="Application.Build All invalid topic">
+    <configuration name="Build All invalid topic" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="--mqtt_host kistler.com --mqtt_port 1881 --tls --mqtt_cert ./cert.pem --mqtt_cert_key ./cert-key.pem --iotivity_endpoint coap+tcp://cloud.com --iotivity_path ./iotivity.db" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug-bundled" RUN_TARGET_PROJECT_NAME="gardener" RUN_TARGET_NAME="gardener" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="--mqtt_host kistler.com --mqtt_port 1881 --tls --mqtt_cert ./cert.pem --mqtt_cert_key ./cert-key.pem --iotivity_endpoint coap+tcp://cloud.com --iotivity_path ./iotivity.db --mqtt_topic test" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug-bundled" RUN_TARGET_PROJECT_NAME="gardener" RUN_TARGET_NAME="gardener" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Build help" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-h" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug-bundled" RUN_TARGET_PROJECT_NAME="gardener" RUN_TARGET_NAME="gardener" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -390,6 +400,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.Build All invalid topic" />
+      <item itemvalue="Application.Build help" />
       <item itemvalue="Application.gardener" />
     </list>
   </component>
@@ -397,19 +409,19 @@
     <frame x="56" y="-11" width="1865" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30049533" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3148046" />
       <window_info id="Structure" order="1" weight="0.255366" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32867885" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39957035" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39957035" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="CMake" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32867885" />
+      <window_info anchor="bottom" id="CMake" order="8" weight="0.32975295" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32867885" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32867885" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
@@ -430,145 +442,111 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>130</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>132</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>135</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>143</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>144</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>147</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/main.c</url>
+          <line>34</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/main.c</url>
-          <line>209</line>
-          <option name="timeStamp" value="12" />
+          <line>32</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/config.c</url>
+          <line>173</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/config.c</url>
+          <line>156</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/main.c</url>
-          <line>210</line>
-          <option name="timeStamp" value="13" />
+          <line>28</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/main.c</url>
-          <line>212</line>
-          <option name="timeStamp" value="14" />
+          <line>23</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>151</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>155</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
+          <url>file://$PROJECT_DIR$/src/config.c</url>
           <line>139</line>
-          <option name="timeStamp" value="18" />
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/config.c</url>
+          <line>140</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/config.c</url>
+          <line>56</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/config.c</url>
+          <line>57</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/config.c</url>
+          <line>153</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/config.c</url>
+          <line>158</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/config.c</url>
+          <line>161</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/config.c</url>
+          <line>157</line>
+          <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/main.c</url>
-          <line>146</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>106</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>100</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>42</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>57</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>58</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>41</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>104</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>84</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>72</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>45</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>47</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>80</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/subscriber.c</url>
-          <line>81</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/deps/iotivity-lite/api/oc_main.c</url>
-          <line>243</line>
-          <option name="timeStamp" value="45" />
+          <line>26</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
     </breakpoint-manager>
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>strlen(config-&gt;mqtt_address)</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>strlen(port)</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>strlen(tcp_prefix)</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>argv[longIndex]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/gardener.cbp" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
     <entry file="file://$PROJECT_DIR$/build/Makefile">
@@ -668,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/string.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="124" column="13" selection-start-line="124" selection-start-column="13" selection-end-line="124" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/include/MQTTClient.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6330">
@@ -696,13 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="526">
           <caret line="29" column="74" selection-start-line="29" selection-start-column="74" selection-end-line="29" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/log.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
         </state>
       </provider>
     </entry>
@@ -794,19 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3720">
           <caret line="248" column="19" selection-start-line="248" selection-start-column="19" selection-end-line="248" selection-end-column="19" />
-          <folding>
-            <element signature="e#893#1196#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding>
-            <element signature="e#93#118#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -817,11 +768,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6075">
+          <caret line="405" column="8" selection-start-line="405" selection-start-column="8" selection-end-line="405" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/deps/paho.mqtt.c/src/MQTTClientPersistence.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/deps/paho.mqtt.c/src/MQTTClient.h">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///usr/include/getopt.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="19" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="19" />
+          <folding>
+            <element signature="e#6151#6489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/subscriber.c">
       <provider selected="true" editor-type-id="text-editor">
@@ -835,18 +803,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/subscriber.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="120">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.c">
+    <entry file="file://$PROJECT_DIR$/src/log.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#77#96#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1455">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2085">
+          <caret line="139" column="11" selection-start-line="139" selection-start-column="11" selection-end-line="139" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -864,20 +836,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.c">
+    <entry file="file://$PROJECT_DIR$/src/config.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+        <state relative-caret-position="-117">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="22" />
           <folding>
-            <element signature="e#220#238#0" expanded="true" />
+            <element signature="e#93#118#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/getopt.h">
+    <entry file="file://$PROJECT_DIR$/src/config.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="109" column="11" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="11" />
+        <state relative-caret-position="184">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
+          <folding>
+            <element signature="e#48#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/stdlib.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="133" column="8" selection-start-line="133" selection-start-column="8" selection-end-line="133" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="e#220#238#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

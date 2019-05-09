@@ -11,10 +11,12 @@
 #define MAX_ADDRESS_LENGTH 50
 #define MAX_TOPIC_LENGTH 50
 
+#define OK 0
+
 // ok
 #define CONFIG_SUCCESS 0
 // invalid option
-#define CONFIG_INVALID -1
+#define CONFIG_INVALID_INPUT -1
 // error
 #define CONFIG_ERROR -2
 
@@ -48,5 +50,7 @@ int Config_default(Config_t *config);
 void Config_print(Config_t *config);
 
 int Config_set_parameter(Config_t *config, int argc, char *argv[]);
+
+int Config_get_mqtt_address(Config_t *config, char *address);
 
 #endif //GARDENER_CONFIG_H

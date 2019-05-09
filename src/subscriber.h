@@ -6,9 +6,8 @@
 #define GARDENER_SUBSCRIBER_H
 
 #include <MQTTClient.h>
+#include "config.h"
 
-#define MAX_ADDRESS_LENGTH 100
-#define MAX_TOPIC_LENGTH 100
 
 typedef void* SensorManager_t;
 
