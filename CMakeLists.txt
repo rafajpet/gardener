@@ -27,7 +27,7 @@ include_directories(
 include_directories(${iotivity-lite-client-server_INCLUDE_DIRS})
 
 
-add_executable(${EXECUTABLE} ${dev_src})
+add_executable(${EXECUTABLE} ${dev_src} src/serial.h src/serial.c)
 target_link_libraries(${EXECUTABLE}
         pthread
         ${iotivity-lite-client-server_LIBRARIES}

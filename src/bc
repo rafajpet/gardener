@@ -20,7 +20,6 @@
 #include "oc_api.h"
 #include <signal.h>
 #include <inttypes.h>
-#include "serial.h"
 
 static int quit;
 
@@ -234,11 +233,6 @@ post_handler(oc_request_t *request, oc_interface_mask_t iface_mask,
                 case OC_REP_BOOL:
                     light->state = rep->value.boolean;
                     PRINT("value: %d\n", light->state);
-                    if (light->state) {
-                        write_to_serial_port('1');
-                    } else {
-                        write_to_serial_port('0');
-                    }
                     break;
                 default:
                     oc_send_response(request, OC_STATUS_BAD_REQUEST);
@@ -268,7 +262,6 @@ register_resources(void)
 int
 main(void)
 {
-    init_serial_port();
     int ret = init();
     if (ret < 0) {
         return ret;
@@ -293,6 +286,19 @@ main(void)
 
     oc_cloud_manager_stop(ctx);
     oc_main_shutdown();
-    close_serial_port();
     return 0;
+}
+
+
+
+#include "serial.h"
+
+void main(void)
+{
+    init_serial_port();
+    char data = '1';
+    write_to_serial_port(data);
+    data = '0';
+    write_to_serial_port(data);
+    close_serial_port();
 }
