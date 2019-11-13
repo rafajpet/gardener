@@ -11,9 +11,8 @@ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-omit-frame-pointer -fsanitize=address"
 
 find_package(PkgConfig)
 
-pkg_check_modules(iotivity-constrained-client-server REQUIRED iotivity-constrained-client-server)
-pkg_check_modules(iotivity-constrained-cloud REQUIRED iotivity-constrained-cloud)
-pkg_check_modules(iotivity-constrained-rd-client REQUIRED iotivity-constrained-rd-client)
+pkg_check_modules(iotivity-lite-client-server REQUIRED iotivity-lite-client-server)
+
 
 add_definitions(-DOC_CLIENT -DOC_SERVER -DOC_CLOUD -DOC_DEBUG -g -O0  -fsanitize=address -DOC_PKI -DOC_DYNAMIC_ALLOCATION -DOC_IPV4 -DOC_TCP)
 
@@ -22,18 +21,14 @@ file(GLOB dev_src
         src/*.h
         )
 
-#include_directories(
-#        include
-#)
-include_directories(${iotivity-constrained-client-server_INCLUDE_DIRS})
-include_directories(${iotivity-constrained-cloud_INCLUDE_DIRS})
-include_directories(${iotivity-constrained-rd-client_INCLUDE_DIRS})
+include_directories(
+        include
+)
+include_directories(${iotivity-lite-client-server_INCLUDE_DIRS})
 
 
 add_executable(${EXECUTABLE} ${dev_src})
 target_link_libraries(${EXECUTABLE}
         pthread
-        ${iotivity-constrained-cloud_LIBRARIES}
-        ${iotivity-constrained-client-server_LIBRARIES}
-        ${iotivity-constrained-rd-client_LIBRARIES}
+        ${iotivity-lite-client-server_LIBRARIES}
         )

@@ -5,148 +5,75 @@
       <config projectName="gardener" targetName="gardener" />
     </generated>
   </component>
-  <component name="CMakeSettings" AUTO_RELOAD="true">
+  <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug-native" CONFIG_NAME="Debug" TOOLCHAIN_NAME="native" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0997232b-abb7-4162-a3fe-08e10d2f00bf" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/certs.h" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/certs.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/check_config.h" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/check_config.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/compat-1.3.h" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/compat-1.3.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/config.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/net_sockets.h" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/net_sockets.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/ssl.h" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/ssl.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/ssl_ciphersuites.h" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/ssl_ciphersuites.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/ssl_internal.h" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/ssl_internal.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/x509.h" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/x509.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/x509_crt.h" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/include/mbedtls/x509_crt.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/asn1write.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/asn1write.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/bignum.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/bignum.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/certs.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/certs.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ctr_drbg.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ctr_drbg.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ecp.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ecp.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/entropy_poll.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/entropy_poll.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/md.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/md.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/net_sockets.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/net_sockets.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/pkcs5.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/pkcs5.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/pkparse.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/pkparse.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/rsa.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/rsa.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ssl_ciphersuites.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ssl_ciphersuites.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ssl_cli.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ssl_cli.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ssl_srv.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ssl_srv.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ssl_tls.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/ssl_tls.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/version_features.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/version_features.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/x509.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/x509.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/x509_create.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/x509_create.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/x509_crl.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/x509_crl.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/x509_crt.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/x509_crt.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/x509write_crt.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/library/x509write_crt.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/programs/ssl/ssl_client2.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/programs/ssl/ssl_client2.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/programs/ssl/ssl_server2.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/programs/ssl/ssl_server2.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/programs/x509/cert_write.c" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/programs/x509/cert_write.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/ssl-opt.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/ssl-opt.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_ssl.function" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_ssl.function" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509parse.data" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509parse.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509write.data" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509write.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509write.function" beforeDir="false" afterPath="$PROJECT_DIR$/deps/iotivity-lite/deps/mbedtls/tests/suites/test_suite_x509write.function" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deps/paho.mqtt.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/iotivityDevice.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/iotivityDevice.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/log.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/log.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/subscriber.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/subscriber.h" beforeDir="false" />
+    <list default="true" id="7d965322-9904-453d-a9dd-1c3ea62bccfb" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeCache.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/3.5.1/CMakeCCompiler.cmake" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/3.5.1/CMakeDetermineCompilerABI_C.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/3.5.1/CMakeSystem.cmake" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/3.5.1/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/3.5.1/CompilerIdC/a.out" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/CMakeOutput.log" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/Makefile.cmake" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/Makefile2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/TargetDirectories.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/clion-environment.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/clion-log.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/cmake.check_cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/feature_tests.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/feature_tests.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/gardener.dir/C.includecache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/gardener.dir/DependInfo.cmake" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/gardener.dir/build.make" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/gardener.dir/cmake_clean.cmake" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/gardener.dir/depend.internal" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/gardener.dir/depend.make" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/gardener.dir/flags.make" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/gardener.dir/link.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/gardener.dir/progress.make" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/gardener.dir/src/main.c.o" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/CMakeFiles/progress.marks" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/cmake_install.cmake" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/gardener" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-native/gardener.cbp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/deps/iotivity-lite" afterPath="$PROJECT_DIR$/deps/iotivity-lite" />
+      <change beforePath="$PROJECT_DIR$/doc/linux" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/doc/main.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/doc/main_mqtt.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/doc/parameters.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/doc/sensor.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/doc/sensor.h" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/include/oc_config.h" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/path/iotivity-lite-patch/0001-install-cloud-access-rd-header.patch" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main.c" afterPath="$PROJECT_DIR$/src/main.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
-    <ignored path="$PROJECT_DIR$/cmake-build-debug-native/" />
-    <ignored path="$PROJECT_DIR$/cmake-build-debug-bundled/" />
-    <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-native" />
-  <component name="FUSProjectUsageTrigger">
-    <session id="-30288676">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="63" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="11" />
-          <entry key="project.open.time.6" value="31" />
-          <entry key="project.open.time.7" value="16" />
-          <entry key="project.open.time.8" value="6" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="73" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="Makefile" value="11" />
-          <entry key="c" value="7538" />
-          <entry key="h" value="2873" />
-          <entry key="linux" value="1" />
-          <entry key="txt" value="72" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CMakeLists.txt" value="72" />
-          <entry key="ObjectiveC" value="10411" />
-          <entry key="PLAIN_TEXT" value="12" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="Build All (disassembly)" value="5" />
-          <entry key="Makefile" value="6" />
-          <entry key="c" value="65" />
-          <entry key="cbp" value="2" />
-          <entry key="cmake" value="3" />
-          <entry key="gardener (disassembly)" value="7" />
-          <entry key="h" value="79" />
-          <entry key="linux" value="3" />
-          <entry key="patch" value="2" />
-          <entry key="txt" value="13" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CMakeCache.txt" value="1" />
-          <entry key="CMakeLists.txt" value="13" />
-          <entry key="Disassembly" value="12" />
-          <entry key="ObjectiveC" value="144" />
-          <entry key="PATCH" value="2" />
-          <entry key="PLAIN_TEXT" value="13" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <leaf>
+      <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+            <state relative-caret-position="324">
+              <caret line="234" column="32" lean-forward="false" selection-start-line="234" selection-start-column="27" selection-end-line="234" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -155,36 +82,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>st-app-framework.pc</find>
-      <find>quit</find>
-      <find>PAYLOAD</find>
-      <find>TOPIC</find>
-      <find>MQTTClient_create</find>
-      <find>_create</find>
-      <find>rc</find>
-      <find>handle</find>
-      <find>MQTTClient_connectOptions_initializer</find>
-      <find>Manager_t</find>
-      <find>rd_client.c</find>
-      <find>rd_publish</find>
-      <find>oc_storage_config</find>
-      <find>oc_api.c</find>
-      <find>oc_add_resource(</find>
-      <find>oc_ri_add_resource</find>
-      <find>flag</find>
-      <find>display_usage</find>
-      <find>outFileName</find>
-      <find>optString</find>
-      <find>MAX_TOPIC_LENGTH</find>
-      <find>process_func</find>
-      <find>OC_NETWORK_MONITOR</find>
-      <find>oc_connectivity_init</find>
-      <find>discovery_handler</find>
-      <find>oc_tcp_receive_message</find>
-      <find>manufacturer</find>
-      <find>app_init</find>
-      <find>cloud</find>
-      <find>iotivity-constrained-cloud</find>
+      <find>value</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -193,70 +91,40 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/linux" />
-        <option value="$PROJECT_DIR$/src/parameters.c" />
-        <option value="$PROJECT_DIR$/src/sensor.h" />
-        <option value="$PROJECT_DIR$/src/sensor.c" />
-        <option value="$PROJECT_DIR$/deps/iotivity-lite/port/linux/Makefile" />
-        <option value="$PROJECT_DIR$/doc/main_mqtt.c" />
-        <option value="$PROJECT_DIR$/src/log.c" />
-        <option value="$PROJECT_DIR$/src/log.h" />
-        <option value="$PROJECT_DIR$/deps/paho.mqtt.c/src/MQTTClient.c" />
-        <option value="$PROJECT_DIR$/src/subscriber.c" />
-        <option value="$PROJECT_DIR$/doc/main.c" />
-        <option value="$PROJECT_DIR$/src/subscriber.h" />
-        <option value="$PROJECT_DIR$/src/config.h" />
-        <option value="$PROJECT_DIR$/src/config.c" />
-        <option value="$PROJECT_DIR$/src/iotivityClient.h" />
-        <option value="$PROJECT_DIR$/src/iotivityDevice.c" />
-        <option value="$PROJECT_DIR$/src/iotivityDevice.h" />
         <option value="$PROJECT_DIR$/src/main.c" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="56" />
-    <option name="y" value="-11" />
-    <option name="width" value="1865" />
-    <option name="height" value="1092" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+    <option name="x" value="2111" />
+    <option name="y" value="-4" />
+    <option name="width" value="1861" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="gardener" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gardener" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="gardener" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="gardener" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gardener" type="462c0819:PsiDirectoryNode" />
-              <item name="deps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gardener" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gardener" type="462c0819:PsiDirectoryNode" />
-              <item name="deps" type="462c0819:PsiDirectoryNode" />
-              <item name="iotivity-lite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gardener" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gardener" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="gardener" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -267,23 +135,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="tcpa&#9;FILE&#9;file:///home/rafik/git/clinux/gardener/deps/iotivity-lite/port/linux/tcpadapter.c" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
-  </component>
-  <component name="ReadonlyStatusHandler">
-    <option name="SHOW_DIALOG" value="false" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/path" />
-      <recent name="$PROJECT_DIR$/doc" />
-      <recent name="$PROJECT_DIR$/iotivity-lite-patch" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/doc" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -297,386 +150,59 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Build All">
-    <configuration name="Build All invalid topic" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="--mqtt_host kistler.com --mqtt_port 1881 --tls --mqtt_cert ./cert.pem --mqtt_cert_key ./cert-key.pem --iotivity_endpoint coap+tcp://cloud.com --iotivity_path ./iotivity.db" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug-native" RUN_TARGET_PROJECT_NAME="gardener" RUN_TARGET_NAME="gardener" EXPLICIT_BUILD_TARGET_NAME="all">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Application.gardener">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <envs />
     </configuration>
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="--mqtt_host localhost --mqtt_port 1883 --tls --mqtt_cert ./cert.pem --mqtt_cert_key ./cert-key.pem --iotivity_endpoint coap+tcp://cloud.com --iotivity_path ./iotivity.db --mqtt_topic test" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug-native" RUN_TARGET_PROJECT_NAME="gardener" RUN_TARGET_NAME="gardener" EXPLICIT_BUILD_TARGET_NAME="all">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
+    <configuration name="gardener" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gardener" TARGET_NAME="gardener" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="gardener" RUN_TARGET_NAME="gardener">
+      <envs>
+        <env name="LD_LIBRARY_PATH" value="/usr/local/lib" />
+      </envs>
     </configuration>
-    <configuration name="Build help" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-h" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug-native" RUN_TARGET_PROJECT_NAME="gardener" RUN_TARGET_NAME="gardener" EXPLICIT_BUILD_TARGET_NAME="all">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gardener" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gardener" TARGET_NAME="gardener" CONFIG_NAME="Debug-native" RUN_TARGET_PROJECT_NAME="gardener" RUN_TARGET_NAME="gardener">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.Build All" />
-      <item itemvalue="Application.Build All invalid topic" />
-      <item itemvalue="Application.Build help" />
-      <item itemvalue="Application.gardener" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="1" class="java.lang.String" itemvalue="Application.gardener" />
     </list>
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="56" y="-11" width="1865" height="1092" extended-state="6" />
+    <frame x="1920" y="-4" width="1920" height="1084" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2889378" />
-      <window_info id="Structure" order="1" weight="0.255366" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32867885" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39957035" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32975295" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="CMake" order="8" weight="0.32867885" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32760474" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.32867885" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="LuaJ" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24196099" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/deps/iotivity-lite/api/oc_network_events.c</url>
-          <line>59</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file:///usr/local/include/iotivity-constrained/oc_rep.h</url>
-          <line>22</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-      </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-    </breakpoint-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>strlen(config-&gt;mqtt_address)</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>strlen(port)</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>strlen(tcp_prefix)</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>argv[longIndex]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
+    <breakpoint-manager />
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/api/oc_ri.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/iotivity-constrained/util/oc_list.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/paho.mqtt.c/src/MQTTClient.c" />
-    <entry file="file:///usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6075">
-          <caret line="405" column="8" selection-start-line="405" selection-start-column="8" selection-end-line="405" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/paho.mqtt.c/src/MQTTClientPersistence.h" />
-    <entry file="file://$PROJECT_DIR$/deps/paho.mqtt.c/src/MQTTClient.h" />
-    <entry file="file:///usr/include/getopt.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="19" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/stdlib.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="133" column="8" selection-start-line="133" selection-start-column="8" selection-end-line="133" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/string.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2085">
-          <caret line="139" column="11" selection-start-line="139" selection-start-column="11" selection-end-line="139" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/api/oc_endpoint.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/api/oc_main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3720">
-          <caret line="248" column="19" selection-start-line="248" selection-start-column="19" selection-end-line="248" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/iotivity-constrained/oc_endpoint.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="2" selection-start-line="76" selection-start-column="2" selection-end-line="76" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/signal.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3225">
-          <caret line="215" column="11" selection-start-line="215" selection-start-column="11" selection-end-line="215" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/linux">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/api/oc_network_events.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="84" column="25" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="25" />
-          <folding>
-            <element signature="e#829#870#0" expanded="true" />
-            <element signature="e#1194#1445#0" expanded="true" />
-            <element signature="e#1808#2040#0" expanded="true" />
-            <element signature="e#2470#2968#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/port/linux/ipadapter.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="1381" column="24" selection-start-line="1381" selection-start-column="4" selection-end-line="1381" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/parameters.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/sensor.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/sensor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/main_mqtt.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="337" column="50" lean-forward="true" selection-end-line="500" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/iotivity-constrained/oc_client_state.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/port/linux/tcpadapter.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="374" column="42" lean-forward="true" selection-start-line="374" selection-start-column="42" selection-end-line="374" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/iotivity-constrained/oc_ri.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="82" column="2" selection-start-line="82" selection-start-column="2" selection-end-line="82" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/subscriber.h" />
-    <entry file="file://$PROJECT_DIR$/src/subscriber.c" />
-    <entry file="file://$PROJECT_DIR$/src/iotivityDevice.c" />
-    <entry file="file://$PROJECT_DIR$/src/iotivityDevice.h" />
-    <entry file="file://$PROJECT_DIR$/src/config.c" />
-    <entry file="file://$PROJECT_DIR$/src/config.h" />
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/port/linux/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6400" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/service/cloud/include/cloud.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/service/cloud/src/cloud_internal.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/service/cloud/src/cloud_rd.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/service/cloud/src/cloud_store.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/iotivity-constrained/oc_buffer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/iotivity-constrained/messaging/coap/coap.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/iotivity-constrained/messaging/coap/oc_coap.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/iotivity-constrained/cloud.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/log.h" />
-    <entry file="file://$PROJECT_DIR$/src/log.c" />
-    <entry file="file:///usr/local/include/iotivity-constrained/oc_api.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/iotivity-constrained/oc_rep.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3060">
-          <caret line="204" column="8" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="8" />
-          <folding>
-            <element signature="e#656#691#0" expanded="true" />
-            <element signature="e#826#838#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/iotivity-constrained/oc_config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/CMakeCache.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/gardener.cbp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/oc_config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
-          <folding>
-            <element signature="e#829#847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/iotivity-lite/apps/cloud_linux.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" selection-end-line="204" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/Makefile">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        <state relative-caret-position="324">
+          <caret line="234" column="32" lean-forward="false" selection-start-line="234" selection-start-column="27" selection-end-line="234" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

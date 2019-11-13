@@ -1,1 +1,0 @@
-/usr/bin/cc   -DOC_DEBUG -g -O0 -pthread -fno-omit-frame-pointer -fsanitize=address -g   CMakeFiles/gardener.dir/src/main.c.o  -o gardener -lpthread -liotivity-constrained-cloud -liotivity-constrained-client-server -liotivity-constrained-rd-client 

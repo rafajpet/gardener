@@ -1,3 +1,0 @@
-/home/rafik/git/clinux/gardener/cmake-build-debug-native/CMakeFiles/edit_cache.dir
-/home/rafik/git/clinux/gardener/cmake-build-debug-native/CMakeFiles/rebuild_cache.dir
-/home/rafik/git/clinux/gardener/cmake-build-debug-native/CMakeFiles/gardener.dir
