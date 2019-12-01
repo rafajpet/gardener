@@ -145,6 +145,15 @@ static const char *manufacturer = "ocfcloud.com";
 
 oc_resource_t *res1;
 
+static void write_serial(char data){
+    int i = write_to_serial_port(data);
+    if (i == -1) {
+        close_serial_port();
+        init_serial_port();
+        write_to_serial_port(data);
+    }
+}
+
 static void
 cloud_status_handler(oc_cloud_context_t *ctx, oc_cloud_status_t status,
                      void *data)
@@ -235,9 +244,9 @@ post_handler(oc_request_t *request, oc_interface_mask_t iface_mask,
                     light->state = rep->value.boolean;
                     PRINT("value: %d\n", light->state);
                     if (light->state) {
-                        write_to_serial_port('1');
+                        write_serial('1');
                     } else {
-                        write_to_serial_port('0');
+                        write_serial('0');
                     }
                     break;
                 default:
@@ -248,15 +257,6 @@ post_handler(oc_request_t *request, oc_interface_mask_t iface_mask,
         rep = rep->next;
     }
     oc_send_response(request, OC_STATUS_CHANGED);
-}
-
-static void write_serial(char data){
-    int i = write_to_serial_port(data);
-    if (i == -1) {
-        close_serial_port();
-        init_serial_port();
-        write_to_serial_port(data);
-    }
 }
 
 static void
