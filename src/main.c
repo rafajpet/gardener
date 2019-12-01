@@ -250,6 +250,15 @@ post_handler(oc_request_t *request, oc_interface_mask_t iface_mask,
     oc_send_response(request, OC_STATUS_CHANGED);
 }
 
+static void write_serial(char data){
+    int i = write_to_serial_port(data);
+    if (i == -1) {
+        close_serial_port();
+        init_serial_port();
+        write_to_serial_port(data);
+    }
+}
+
 static void
 register_resources(void)
 {

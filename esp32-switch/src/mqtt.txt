@@ -1,0 +1,222 @@
+#include <Arduino.h>
+#include "SSD1306.h"
+#include "SPIFFS.h"
+#include <WiFi.h>
+// #include <WiFiClientSecure.h>
+#include <WiFiClient.h>
+#include <PubSubClient.h>
+#include <ESPmDNS.h>
+
+
+const char* ssid = "TEST";
+const char* password =  "0908276979";
+ 
+uint8_t ledPin = 16; // Onboard LED reference
+
+SSD1306 display(0x3c, 5, 4);
+
+
+const char* mqtt_server = "192.168.100.20";
+const uint16_t mqtt_port = 1883; 
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+
+const char* ca_cert = \ 
+"-----BEGIN CERTIFICATE-----\n" \
+"MIIDczCCAlugAwIBAgIJANV1bYl29p0KMA0GCSqGSIb3DQEBCwUAMFAxCzAJBgNV\n" \
+"BAYTAlNLMQswCQYDVQQIDAJTSzELMAkGA1UEBwwCU0sxCzAJBgNVBAoMAlNLMQsw\n" \
+"CQYDVQQLDAJTSzENMAsGA1UEAwwEaG9tZTAeFw0xOTAzMjgyMDIyMzJaFw0yOTAz\n" \
+"MjUyMDIyMzJaMFAxCzAJBgNVBAYTAlNLMQswCQYDVQQIDAJTSzELMAkGA1UEBwwC\n" \
+"U0sxCzAJBgNVBAoMAlNLMQswCQYDVQQLDAJTSzENMAsGA1UEAwwEaG9tZTCCASIw\n" \
+"DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJ4YFKkCqHfALMQqUJIx6QBX91el\n" \
+"emIxtFMTlxVmn6qipvZn3xnZSd15QymaxNAFYX1qrmTesuTAKMyIkKKSghQDql29\n" \
+"0lFL5FHedDNHRaVVVcAv/4MQfiSQMVKzsOOzpthU/SK0u38yo+U0tnr3uxBs4KYZ\n" \
+"6qkA9ZzNooaVguDi7JzfRF9TFvrVAu9dQ9RDB7Dv5blbEaWgEKLz28GrcQfnTp6h\n" \
+"Eu5sXPQyKmucjmcF2C2fnZfBXRGx49O87fnDPYpaQLfqIdNsA40mfMB4Oim41SLE\n" \
+"Ll7l7FCu+V1G1BX8AUVLS2E7vLNYO2BDqe2vWRzq+skTNCEMHsMYqjRAQU0CAwEA\n" \
+"AaNQME4wHQYDVR0OBBYEFGQSQZkskmhBGvcOI0LK/XCMDfV6MB8GA1UdIwQYMBaA\n" \
+"FGQSQZkskmhBGvcOI0LK/XCMDfV6MAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEL\n" \
+"BQADggEBAHknMK+pNPPKjBJyuJu8b70jbY8y8zi06g5A8OQuQIZXc9oCgAt5qewN\n" \
+"oqqjVxHu55raNT9lJ3rgdE05edm2soruPBr5BnWPl7NZkx1gjYFqPI/mUu4Whm2D\n" \
+"hYBMgvk83vdoFy56jRgjeGNpGymyVCncC7wRNXyY7XIEWtl+42rluOg8xRtJGRlW\n" \
+"48+BQC1FGwOtycB18YpsLpndEfjdDL9YhJuC4PPcNRanqpb2OY50hJIHHPQEdbOg\n" \
+"Q9/mdHT/gXhjqflfdd8AOR5v0ZS9fMw4QFtGvB+URYgXJ+/qfP3rUUryEyFNINqn\n" \
+"a6U6IwkCDftAsEdRZPKx3Vt/Q9Wi1AQ=\n" \
+"-----END CERTIFICATE-----\n";
+
+
+/* topics */
+#define TEMP_TOPIC    "test"
+
+long lastMsg = 0;
+const char* msg = "Hello from esp32";
+
+void receivedCallback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Message received: ");
+  Serial.println(topic);
+
+  Serial.print("payload: ");
+  for (int i = 0; i < length; i++) {
+    Serial.print((char)payload[i]);
+  }
+  Serial.println();
+}
+
+
+void mqttconnect() {
+  /* Loop until reconnected */
+  while (!client.connected()) {
+    Serial.print("MQTT connecting ...");
+    /* client ID */
+    String clientId = "ESP32Client";
+    /* connect now */
+    if (client.connect(clientId.c_str())) {
+      Serial.println("connected");
+      /* subscribe topic with default QoS 0*/
+    } else {
+      Serial.print("failed, status code =");
+      Serial.print(client.state());
+      Serial.println("try again in 5 seconds");
+      /* Wait 5 seconds before retrying */
+      delay(5000);
+    }
+  }
+}
+
+
+
+void connectToNetwork() {
+  WiFi.begin(ssid, password);
+ 
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Establishing connection to WiFi..");
+  }
+ 
+  Serial.println("Connected to network");
+ 
+}
+ 
+void setup() {
+ 
+  Serial.begin(115200);
+ 
+  // connectToNetwork();
+ 
+  Serial.println("Display");
+  // Serial.println("WiFi connected");
+  // Serial.println("IP address: ");
+  // Serial.println(WiFi.localIP());
+
+  // espClient.setCACert(ca_cert);
+  /* configure the MQTT server with IPaddress and port */
+  // client.setServer(mqtt_server, mqtt_port);
+  /* this receivedCallback function will be invoked 
+  when client received subscribed topic */
+  // client.setCallback(receivedCallback);
+
+
+//   WiFi.disconnect(true);
+ 
+    display.init(); // initialise the OLED
+    display.flipScreenVertically(); // does what is says
+    display.setFont(ArialMT_Plain_24); // does what is says
+    // Set the origin of text to top left
+    display.setTextAlignment(TEXT_ALIGN_CENTER_BOTH);
+
+}
+
+
+
+
+// uint16_t loopCount = 0; // Use to print how many times the program has looped
+// uint32_t progTime = 0;
+
+// void setup() {
+//     pinMode(ledPin, OUTPUT);
+    
+//     Serial.begin(115200);
+//     // put your setup code here, to run once:
+
+//     display.init(); // initialise the OLED
+//     display.flipScreenVertically(); // does what is says
+//     display.setFont(ArialMT_Plain_24); // does what is says
+//     // Set the origin of text to top left
+//     display.setTextAlignment(TEXT_ALIGN_CENTER_BOTH);
+
+
+//     if (!SPIFFS.begin(true)) {
+//         Serial.println("An Error has occurred while mounting SPIFFS");
+//         return;
+//     }
+ 
+//     File file = SPIFFS.open("/test.txt", FILE_WRITE);
+    
+//     if (!file) {
+//         Serial.println("There was an error opening the file for writing");
+//         return;
+//     }
+//     if (file.print("TEST")) {
+//         Serial.println("File was written");
+//     } else {
+//         Serial.println("File write failed");
+//     }
+    
+//     file.close();
+    
+
+// }
+
+void loop() {
+    
+    Serial.println("Hello World");
+    delay(2000);
+
+    // if (!client.connected()) {
+    //   mqttconnect();
+    // }
+    // /* this function will listen for incomming 
+    // subscribed topic-process-invoke receivedCallback */
+    // client.loop();
+    // client.publish(TEMP_TOPIC, msg);
+
+    // for(uint8_t i = 0; i < 100; i ++){
+    //     display.drawProgressBar(10,10,100,7,i);
+    //     display.display();
+    //     delay(50);
+    //     display.clear();
+    // }
+
+    display.drawString(10, 31, "Why, cacha!!");
+    display.display();
+    delay(2000);
+    display.clear();
+
+
+    // // Print progTime:
+    // progTime = millis()/1000;
+
+    // display.setFont(ArialMT_Plain_16); // make the font smaller
+    // display.drawString(63, 14, "Run time(S) =");
+    // display.setFont(ArialMT_Plain_24); // and bigger again
+    // display.drawString(63, 38, String(progTime));
+    // display.display();
+    // delay(2000);
+    // display.clear();
+    // display.display();
+
+    // // Print loopCount:
+    // display.setFont(ArialMT_Plain_16); // make the font smaller
+    // display.drawString(63, 14, "Loops =");
+    // display.setFont(ArialMT_Plain_24); // and bigger again
+    // display.drawString(63, 38, String(loopCount));
+    // display.display();
+    // delay(2000);
+    // display.clear();
+    // display.display();
+
+    // loopCount++; // iterate loopCount
+
+}

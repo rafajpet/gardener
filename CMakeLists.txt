@@ -7,14 +7,14 @@ set(CMAKE_C_STANDARD 99)
 
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DOC_DEBUG -g -O0")
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
-set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-omit-frame-pointer -fsanitize=address")
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-omit-frame-pointer ")
 
 find_package(PkgConfig)
 
 pkg_check_modules(iotivity-lite-client-server REQUIRED iotivity-lite-client-server)
 
 
-add_definitions(-DOC_CLIENT -DOC_SERVER -DOC_CLOUD -DOC_DEBUG -g -O0  -fsanitize=address -DOC_PKI -DOC_DYNAMIC_ALLOCATION -DOC_IPV4 -DOC_TCP)
+add_definitions(-DOC_CLIENT -DOC_SERVER -DOC_CLOUD -DOC_DEBUG -g -O0  -DOC_PKI -DOC_DYNAMIC_ALLOCATION -DOC_IPV4 -DOC_TCP)
 
 file(GLOB dev_src
         src/*.c
